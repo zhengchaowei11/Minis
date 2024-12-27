@@ -123,7 +123,9 @@ public class SimpleBeanFactory extends DefaultSingletonBeanRegistry implements B
     			}
 				try {
 					con = clz.getConstructor(paramTypes);
-					obj = con.newInstance(paramValues);
+					obj = con.newInstance(
+
+					);
 				} catch (NoSuchMethodException e) {
 					e.printStackTrace();
 				} catch (SecurityException e) {

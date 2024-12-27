@@ -1,5 +1,8 @@
 package com.minis.beans;
 
+/**
+ * 这个 BeanFactory 不生产bean 
+ */
 public interface BeanFactory {
     Object getBean(String name) throws BeansException;
 	boolean containsBean(String name);
