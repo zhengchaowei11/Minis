@@ -1,0 +1,6 @@
+一.创建对象的方法
+1.通过className 获取 class 对象Class<?> clz= Class.forName()
+2.con = clz.getConstructor(paramTypes);  获取构造器
+3.根据构造器创造对象  con.newInstance(paraValues)
+
+二.通过反射
