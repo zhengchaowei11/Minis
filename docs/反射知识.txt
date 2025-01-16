@@ -3,4 +3,21 @@
 2.con = clz.getConstructor(paramTypes);  获取构造器
 3.根据构造器创造对象  con.newInstance(paraValues)
 
-二.通过反射
+二.通过反射执行方法
+1.通过className 获取 class 对象Class<?> clz= Class.forName()
+2.通过getMethod 获取 Method method = clz.getMethod(methodName, paramTypes);
+3.执行方法 method.invoke(obj, paramValues);
+
+
+
+三.获取clazz 对象 并且反射出来fileds
+Class<?> clazz = bean.getClass();
+Field[] fields = clazz.getDeclaredFields();
+boolean isAutowired =field.isAnnotationPresent(Autowired.class);
+ if(isAutowired){
+    String fieldName = field.getName();
+    Object autowiredObj =this.getBeanFactory().getBean(fieldName);
+    field.setAccessible(true);
+    field.set(bean, autowiredObj);
+
+四.
