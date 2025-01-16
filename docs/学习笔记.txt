@@ -1,0 +1,18 @@
+定义beanFactory接口
+     BeanFactory 一共有五个方法 负责bean的定义
+        Object getBean(String name) throws BeansException;
+        boolean containsBean(String name);
+        boolean isSingleton(String name);
+        boolean isPrototype(String name);
+        Class<?> getType(String name);
+定义单例接口
+      SingletonBeanRegistry
+       void registerSingleton(String beanName, Object singletonObject);
+       Object getSingleton(String beanName);
+       boolean containsSingleton(String beanName);
+       String[] getSingletonNames();
+定义ListableBeanFactory
+     ListableBeanFactory 是 Spring 框架中 BeanFactory 接口的一个扩展。它提供了额外的功能
+     允许你查询和操作在容器中定义的 bean 的列表。这个接口继承自 BeanFactory，
+     添加了一些新的方法，如 getBeanNamesForType(Class<?> type)
+     和 getBeansOfType(Class<?> type)，这些方法允许你基于类型来获取 bean 的名称和实例。
